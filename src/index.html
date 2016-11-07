@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="Bloxo" content="Side Scroller Addictive Video Game">
+		<title>Bloxo</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="js/pageSetting.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+	</head>
+	<body onload="hideContent()">
+		<header>
+			<img src="assets/images/bloxo-logo.svg" alt="bloxo logo" id="headLogo"/>
+			<h1 id="title">Bloxo</h1>
+		</header>
+		<canvas id="gameStage">
+			
+		</canvas>
+		<section id="content">
+			<ul class="tabList">
+				<li id="signInTab"><a href="#/" class="tab" onclick="openTab(event, 'signIn')">Login</a></li>
+				<li id="signUpTab"><a href="#/" class="tab" onclick="openTab(event, 'signUp')">Sign Up</a></li>
+				<li id="instructionsTab"><a href="#/" class="tab" onclick="openTab(event, 'instructions')">Instructions</a></li>
+				<li id="scoreboardTab"><a href="#/" class="tab" onclick="openTab(event, 'scoreboard')">Scoreboard</a></li>
+				<li id="aboutTab"><a href="#/" class="tab" onclick="openTab(event, 'about')">About</a></li>
+			</ul>
+
+			<div id="containers">
+				<section class="sectionContent" id="signIn">
+					<!--Sign In Container contents-->
+					<h2 id="signInTitle">Login</h2>
+					<p>Sign In With Google</p>
+					<div 
+						class="g-signin2" data-onsuccess="onSignIn">
+					</div>
+					<p>or</p>
+					<form>
+						<fieldset>
+							<legend>Login with your Account</legend>
+							<input type="email" name="email" placeholder="E-Mail">
+							<input type="password" name="password" placeholder="Password" />
+							<input type="submit" name="submitLogin" value="Login">
+						</fieldset>
+					</form>
+				</section>
+				<section class="sectionContent" id="signUp">
+					<!--Sign Up Container contents-->
+					<h2>Sign Up</h2>
+					<p>Use Google</p>
+					<div 
+						class="g-signin2" data-onsuccess="onSignIn">						
+					</div>
+					
+					<p>or</p>
+					
+					<form>
+						<fieldset>
+							<legend>Create Account</legend>
+							<input type="text" name="name" placeholder="Name*" maxlength="16" required>
+							<input type="text" name="surname" placeholder="Surname*" maxlength="16" required>
+							<input type="email" name="email" placeholder="E-Mail*" required>
+							<input type="password" name="password" placeholder="Password*" minlength="6" required>
+							<input type="password" name="repass" placeholder="Re-Type Password*" minlength="6" required>
+							<input type="date" name="age">
+							<input type="reset" value="Clear Fields">
+							<input type="submit" name="submitAccount" value="Create Account">
+						</fieldset>
+					</form>
+
+
+				</section>
+				<section class="sectionContent" id="instructions">
+					<!--Instructions Container contents-->
+					<h2>Instructions</h2>
+					<div id="jumpInstruction">
+						<img src="assets/images/space-bar.png" alt="space bar" id="spaceBar">
+						<p> - Move Up</p>
+					</div>
+					<div id="pauseInstruction">
+						<img src="assets/images/esc.png" alt="escape" id="esc">
+						<p> - Pause Game</p>
+					</div>
+				</section>
+				<section class="sectionContent" id="scoreboard">
+					<!--ScoreBoard Container contents-->
+					<h2>Scoreboard</h2>
+					<table>
+						<thead>
+							<th>Country</th>
+							<th>Username</th>
+							<th>Score</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section class="sectionContent" id="about">
+					<!--About Container contents-->
+					<h2 id="aboutMeTitle">About Me</h2>
+					<p>Hi, I am a 19 year old student currently studying Bsc Computer Studies at Middlesex University Malta. This website was created as an assignment for the Web Design and Databases Module. It is based from Javascript, HTML, CSS and some basic PHP to keep the header and the footer constant.</p>
+					<p>Bloxo is an infinite sidescroller game that I created to demonstrate my knoledge of javascrpt in the web. The design of the game is based off minimalism. It features clean lines and blocks which gives the game a modern feeling. The scope of the game is to take Bloxo as further away as possible withouth hitting any obstacles.</p>
+					<p>Feel Free to Contact Me on my email: <br> armandfgs@gmail.com</p>
+				</section>
+			</div>
+		</section>
+		<footer>
+			<p>Armand Grech Scerri<br>Middlesex Malta CCE2050 <br> 2016</p>
+		</footer>
+	</body>
+</html>
