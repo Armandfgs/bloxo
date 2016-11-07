@@ -43,6 +43,8 @@ footer{
 .g-signin2{
 	width: 20px;
 	height: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*FORMS CSS*/
