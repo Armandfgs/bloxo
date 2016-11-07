@@ -38,6 +38,7 @@ p{
 }
 
 footer{
+	margin-top:3%;
 	border-top: 1px solid black; 
 }
 
@@ -141,12 +142,12 @@ th:first-child{
 	width: 50%;
 	margin-right: auto;
 	margin-left: auto;
-	margin-bottom: 10%;
 }
 
 #about p{
 	text-align: justify;
 	padding: 20px;
+	padding-bottom: none;
 }
 
 /*TABS CSS*/
