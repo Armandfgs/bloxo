@@ -40,6 +40,10 @@ p{
 footer{
 	border-top: 1px solid black; 
 }
+.g-signin2{
+	width: 20px;
+	height: 10px;
+}
 
 /*FORMS CSS*/
 form{
