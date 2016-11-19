@@ -13,7 +13,7 @@
 	<body onload="hideContent()">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<header>
-			<?php include 'header.php';?>
+			<?php include (includes/header.php);?>
 		</header>
 		<canvas id="gameStage">
 			
@@ -157,7 +157,7 @@
 			</div>
 		</section>
 		<footer>
-			<?php include 'footer.php';?>
+			<?php include (includes/footer.php);?>
 		</footer>
 	</body>
 </html>
