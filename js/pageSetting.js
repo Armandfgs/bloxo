@@ -50,6 +50,6 @@ function checkValidPass()
        document.getElementById("passSignUp").style.borderColor = "red"; 
     }else
     {
-        document.getElementById("passSignUp").style.borderColor = "Pale"; 
+        document.getElementById("passSignUp").style.borderColor = "PaleGreen"; 
     }
 }
