@@ -32,7 +32,6 @@ function checkSamePass(){
 
     if(repass === pass)
     {
-            document.getElementById("passSignUp").style.borderColor = "PaleGreen";
             document.getElementById("repassSignUp").style.borderColor = "PaleGreen";
     }else
     {

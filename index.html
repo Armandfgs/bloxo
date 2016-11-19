@@ -13,7 +13,7 @@
 	<body onload="hideContent()">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<header>
-			<?php include (includes/header.php);?>
+			<img src="assets/images/bloxo-logo.svg">
 		</header>
 		<canvas id="gameStage">
 			
@@ -62,7 +62,7 @@
 							<input type="text" name="surname" placeholder="Surname*" maxlength="16" required>
 							<input type="email" name="email" placeholder="E-Mail*" required>
 							<input type="password" id="passSignUp" name="password" placeholder="Password*" onblur="checkValidPass()" minlength="6" required>
-							<p id="passExplanation">*Password must be at least 8 charachters long,contain at least 1 number, 1 uppercase and any one of these shapes: !@#$%^\&amp</p>
+							<p id="passExplanation">*Password must be at least 8 charachters long,contain at least 1 number, 1 uppercase and any one of these symbols: !@#$%^\&amp</p>
 							<input type="password" id="repassSignUp" name="repass" placeholder="Re-Type Password*" onblur="checkSamePass()" minlength="8" required>
 							<input type="date" name="age">
 							<input type="reset" value="Clear Fields">
@@ -76,7 +76,7 @@
 					<!--Instructions Container contents-->
 					<h2>Instructions</h2>
 					<div id="jumpInstruction">
-						<img src="assets/images/space-bar.png" alt="space bar" id="spaceBar">
+						<img src="ssets/images/space-bar.png" alt="space bar" id="spaceBar">
 						<p> - Move Up</p>
 					</div>
 					<div id="pauseInstruction">
@@ -157,7 +157,7 @@
 			</div>
 		</section>
 		<footer>
-			<?php include (includes/footer.php);?>
+			<p>Armand Grech Scerri<br>Middlesex Malta CCE2050 <br> Copyright &copy; 2016</p>;
 		</footer>
 	</body>
 </html>
