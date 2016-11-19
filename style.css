@@ -76,6 +76,18 @@ input{
 	font-size: 20px;
 }
 
+#passSignUp{
+	margin-bottom: 0%;
+}
+
+#passExplanation{
+	font-size: 10px;
+	width: 75%;
+	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /*INSTRUCTION CSS*/
 #spaceBar{
 	width:50%;
@@ -159,7 +171,7 @@ ul.tabList {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: 1px solid #E5E5E5;
     background-color: #f1f1f1;
 }
 

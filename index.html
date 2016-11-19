@@ -13,8 +13,7 @@
 	<body onload="hideContent()">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<header>
-			<img src="assets/images/bloxo-logo.svg" alt="bloxo logo" id="headLogo"/>
-			<h1 id="title">Bloxo</h1>
+			<?php include 'header.php';?>
 		</header>
 		<canvas id="gameStage">
 			
@@ -37,7 +36,7 @@
 						class="g-signin2" data-onsuccess="onSignIn">
 					</div>
 					<p>or</p>
-					<form>
+					<form method="post">
 						<fieldset>
 							<legend>Login with your Account</legend>
 							<input type="email" name="email" placeholder="E-Mail">
@@ -56,14 +55,15 @@
 					
 					<p>or</p>
 					
-					<form>
+					<form method="post">
 						<fieldset>
 							<legend>Create Account</legend>
 							<input type="text" name="name" placeholder="Name*" maxlength="16" required>
 							<input type="text" name="surname" placeholder="Surname*" maxlength="16" required>
 							<input type="email" name="email" placeholder="E-Mail*" required>
-							<input type="password" name="password" placeholder="Password*" minlength="6" required>
-							<input type="password" name="repass" placeholder="Re-Type Password*" minlength="6" required>
+							<input type="password" id="passSignUp" name="password" placeholder="Password*" onblur="checkValidPass()" minlength="6" required>
+							<p id="passExplanation">*Password must be at least 8 charachters long,contain at least 1 number, 1 uppercase and any one of these shapes: !@#$%^\&amp</p>
+							<input type="password" id="repassSignUp" name="repass" placeholder="Re-Type Password*" onblur="checkSamePass()" minlength="8" required>
 							<input type="date" name="age">
 							<input type="reset" value="Clear Fields">
 							<input type="submit" name="submitAccount" value="Create Account">
@@ -157,7 +157,7 @@
 			</div>
 		</section>
 		<footer>
-			<p>Armand Grech Scerri<br>Middlesex Malta CCE2050 <br> 2016</p>
+			<?php include 'footer.php';?>
 		</footer>
 	</body>
 </html>
