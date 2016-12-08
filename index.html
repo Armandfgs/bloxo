@@ -5,20 +5,28 @@
 		<meta name="Bloxo" content="Side Scroller Addictive Video Game">
 		<title>Bloxo</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pageSetting.js"></script>
+		<script type="text/javascript" src="js/signUp.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/score.js"></script>
+		<script type="text/javascript" src="js/bloxo.js"></script>
+		<script type="text/javascript" src="js/phaser.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<meta name="google-signin-client_id" content="709266386860-2pr6tf9u831adk43c15p9uabdmt9fa08.apps.googleusercontent.com">
 
 	</head>
 	<body onload="hideContent()">
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<header>
 			<img src= "assets/images/bloxo-logo.svg" alt="bloxo logo" id="headLogo"/>
-			<h1 id="title">Bloxo</h1>
+			<h1 id="title">Bloxo</h1>;
 		</header>
-		<canvas id="gameStage">
-			
-		</canvas>
+		<p id="userActionTxt"></p>
+
+		<div id="gameStage">
+				<input type="button" id="startButton" name="startGame" value="Start Game" onclick="setGameStage()">
+		</div>		
 		<section id="content">
 			<ul class="tabList">
 				<li id="signInTab"><a href="#/" class="tab" onclick="openTab(event, 'signIn')">Login</a></li>
@@ -40,9 +48,10 @@
 					<form method="post">
 						<fieldset>
 							<legend>Login with your Account</legend>
-							<input type="email" name="email" placeholder="E-Mail">
-							<input type="password" name="password" placeholder="Password" />
-							<input type="submit" name="submitLogin" value="Login">
+							<input type="email" id="emailLogin" name="email" placeholder="E-Mail">
+							<input type="password" id="passLogin" name="password" placeholder="Password" />
+							<p id="loginTxt"></p>
+							<input type="button" name="submitLogin" value="Login" onclick="logIn()">
 						</fieldset>
 					</form>
 				</section>
@@ -59,25 +68,24 @@
 					<form method="post">
 						<fieldset>
 							<legend>Create Account</legend>
-							<input type="text" name="name" placeholder="Name*" maxlength="16" required>
-							<input type="text" name="surname" placeholder="Surname*" maxlength="16" required>
-							<input type="email" name="email" placeholder="E-Mail*" required>
+							<input type="text" id="nameSignUp" name="name" placeholder="Name*" maxlength="16" required>
+							<input type="text" id="surnameSignUp" name="surname" placeholder="Surname*" maxlength="16" required>
+							<input type="email" id="emailSignUp" name="email" placeholder="E-Mail*" onblur="instantEmailVerification()" required>
+							<p id="validEmail" class="signUpFormTxt" ></p>
 							<input type="password" id="passSignUp" name="password" placeholder="Password*" onblur="checkValidPass()" minlength="6" required>
-							<p id="passExplanation">*Password must be at least 8 charachters long,contain at least 1 number, 1 uppercase and any one of these symbols: !@#$%^\&amp</p>
+							<p id="passExplanation" class="signUpFormTxt">*Password must be at least 8 charachters long,contain at least 1 number, 1 uppercase and any one of these symbols: !@#$%^\&amp</p>
 							<input type="password" id="repassSignUp" name="repass" placeholder="Re-Type Password*" onblur="checkSamePass()" minlength="8" required>
-							<input type="date" name="age">
+							<input type="date" id="dobSignUp" name="age">
 							<input type="reset" value="Clear Fields">
-							<input type="submit" name="submitAccount" value="Create Account">
+							<input type="button" name="submitAccount" value="Create Account" onclick="createNewAccount()">
 						</fieldset>
 					</form>
-
-
 				</section>
 				<section class="sectionContent" id="instructions">
 					<!--Instructions Container contents-->
 					<h2>Instructions</h2>
 					<div id="jumpInstruction">
-						<img src="ssets/images/space-bar.png" alt="space bar" id="spaceBar">
+						<img src="assets/images/space-bar.png" alt="space bar" id="spaceBar">
 						<p> - Move Up</p>
 					</div>
 					<div id="pauseInstruction">
@@ -88,65 +96,16 @@
 				<section class="sectionContent" id="scoreboard">
 					<!--ScoreBoard Container contents-->
 					<h2>Scoreboard</h2>
-					<table>
-						<thead>
-							<th>Country</th>
-							<th>Username</th>
-							<th>Score</th>
-						</thead>
-						<tbody>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
+					<div id="scoreboardTable">
+						<div id="scoreHeaderRow">
+							<div class="scoreHeader">City</div>
+							<div class="scoreHeader">Name</div>
+							<div class="scoreHeader">Score</div>
+						</div>
+						<div id="positionsList">
+							
+						</div>
+					</div>
 				</section>
 				<section class="sectionContent" id="about">
 					<!--About Container contents-->
@@ -158,7 +117,10 @@
 			</div>
 		</section>
 		<footer>
-			<p>Armand Grech Scerri<br>Middlesex Malta CCE2050 <br> Copyright &copy; 2016</p>
+			<p>Armand Grech Scerri<br>Middlesex Malta CCE2050 <br> Copyright &copy; 2016</p>;
 		</footer>
+		<script type="text/javascript">
+			buildScoreboard();
+		</script>
 	</body>
 </html>

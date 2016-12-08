@@ -26,30 +26,4 @@ function openTab(evt, tabName) {
     return false;
 }
 
-function checkSamePass(){
-    var pass = document.getElementById("passSignUp").value;
-    var repass = document.getElementById("repassSignUp").value;
 
-    if(repass === pass)
-    {
-            document.getElementById("repassSignUp").style.borderColor = "PaleGreen";
-    }else
-    {
-        document.getElementById("repassSignUp").style.borderColor = "red";
-    }
-}
-
-function checkValidPass()
-{
-    var pass = document.getElementById("passSignUp").value
-    var required = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-
-
-    if(!required.test(pass))
-    {
-       document.getElementById("passSignUp").style.borderColor = "red"; 
-    }else
-    {
-        document.getElementById("passSignUp").style.borderColor = "PaleGreen"; 
-    }
-}
